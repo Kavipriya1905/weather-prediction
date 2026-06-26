@@ -1,0 +1,367 @@
+/* ===========================
+   RESET
+=========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ===========================
+   BODY
+=========================== */
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    min-height:100dvh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    transition:background 1s ease;
+}
+
+/* Background Themes */
+body.default{
+    background:linear-gradient(135deg,#1e3a8a 0%,#f97316 50%,#ffffff 100%);
+}
+
+body.sunny{
+    background:linear-gradient(135deg,#ff9a9e 0%,#fad0c4 50%,#fef3c7 100%);
+}
+
+body.cloudy{
+    background:linear-gradient(135deg,#a1c4fd 0%,#c2e9fb 50%,#e0f2fe 100%);
+}
+
+body.rainy{
+    background:linear-gradient(135deg,#1e40af 0%,#64748b 50%,#f1f5f9 100%);
+}
+
+body.foggy{
+    background:linear-gradient(135deg,#64748b 0%,#cbd5e1 50%,#f8fafc 100%);
+}
+
+/* ===========================
+   MAIN CONTAINER
+=========================== */
+
+.container{
+    width:100%;
+    max-width:650px;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.2);
+    backdrop-filter:blur(10px);
+    transition:background 0.8s ease,color 0.8s ease;
+    margin:auto;
+}
+
+/* ===========================
+   HEADING
+=========================== */
+
+.welcome-heading{
+    font-size:3rem;
+    color:inherit;
+    font-weight:900;
+    line-height:1.1;
+    margin-bottom:25px;
+}
+
+.quote{
+    font-size:1.2rem;
+    color:inherit;
+    font-style:italic;
+    line-height:1.6;
+    margin-bottom:35px;
+}
+
+.instruction{
+    font-size:1.6rem;
+    color:inherit;
+    font-weight:bold;
+    margin-bottom:25px;
+}
+
+/* ===========================
+   INPUT AREA
+=========================== */
+
+.input-group{
+    display:flex;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+#city-input{
+
+    flex:1;
+
+    padding:16px;
+
+    font-size:18px;
+
+    border:2px solid #cbd5e1;
+
+    border-radius:12px;
+
+    outline:none;
+
+    transition:.3s;
+}
+
+#city-input:focus{
+
+    border-color:#f97316;
+
+    box-shadow:0 0 8px rgba(249,115,22,.3);
+}
+
+#get-weather-btn{
+
+    padding:16px 30px;
+
+    background:#f97316;
+
+    color:white;
+
+    border:none;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:.3s;
+}
+
+#get-weather-btn:hover{
+
+    background:#ea580c;
+
+    transform:translateY(-2px);
+}
+
+/* ===========================
+   WEATHER BOX
+=========================== */
+.weather-box{
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    border-radius:18px;
+
+    padding:30px;
+
+    min-height:180px;
+
+    margin-top:20px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+    transition:0.5s ease;
+}
+
+.weather-box h2{
+    color:inherit;
+    margin-bottom:20px;
+    font-size:2rem;
+}
+
+.weather-box p{
+    color:inherit;
+    font-size:20px;
+    margin:12px 0;
+}
+
+.condition-emoji{
+
+    font-size:70px;
+
+    margin:20px 0;
+}
+
+/* ===========================
+   LOADER
+=========================== */
+
+.loader{
+
+    width:55px;
+
+    height:55px;
+
+    border:8px solid #eee;
+
+    border-top:8px solid #f97316;
+
+    border-radius:50%;
+
+    margin:30px auto;
+
+    animation:spin 1s linear infinite;
+}
+
+@keyframes spin{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* ===========================
+   HISTORY
+=========================== */
+
+#recent-searches{
+
+    margin-top:25px;
+
+    color:#555;
+}
+
+#history-list{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:10px;
+
+    margin-top:12px;
+
+    list-style:none;
+}
+
+#history-list li{
+
+    background:rgba(249,115,22,.15);
+
+    color:#c2410c;
+
+    padding:8px 18px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+#history-list li:hover{
+
+    background:rgba(249,115,22,.3);
+
+    transform:scale(1.05);
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+    body{
+
+        padding:18px;
+
+        align-items:flex-start;
+    }
+
+    .container{
+
+        width:100%;
+
+        max-width:100%;
+
+        padding:25px 18px;
+
+        margin:20px auto;
+    }
+
+    .welcome-heading{
+
+        font-size:2.2rem;
+    }
+
+    .quote{
+
+        font-size:1rem;
+    }
+
+    .instruction{
+
+        font-size:1.3rem;
+    }
+
+    .input-group{
+
+        flex-direction:column;
+    }
+
+    #city-input{
+
+        width:100%;
+    }
+
+    #get-weather-btn{
+
+        width:100%;
+    }
+
+    .weather-box{
+
+        padding:20px;
+    }
+
+    .weather-box h2{
+
+        font-size:1.7rem;
+    }
+
+    .condition-emoji{
+
+        font-size:60px;
+    }
+}
+
+/* ===========================
+   CONTAINER THEMES
+=========================== */
+
+.container.default{
+    background:linear-gradient(135deg,#1e3a8a 0%,#f97316 50%,#ffffff 100%);
+    color:#ffffff;
+}
+
+.container.sunny{
+    background:linear-gradient(135deg,#ff9a44 0%,#ffd54f 100%);
+    color:#ffffff;
+}
+
+.container.cloudy{
+    background:linear-gradient(135deg,#90caf9 0%,#e3f2fd 100%);
+    color:#1e293b;
+}
+
+.container.rainy{
+    background:linear-gradient(135deg,#1565c0 0%,#78909c 100%);
+    color:#ffffff;
+}
+
+.container.foggy{
+    background:linear-gradient(135deg,#90a4ae 0%,#eceff1 100%);
+    color:#1e293b;
+}

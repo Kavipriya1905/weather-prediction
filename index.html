@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Weather Checker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="default">
+    <div class="container default">
+        <h1 class="welcome-heading">Welcome to Weather Magic</h1>
+
+        <p class="quote">
+            "Weather is a great bluffer. I guess it always has been."<br>
+        </p>
+
+        <p class="instruction">Enter your city</p>
+
+        <div class="input-group">
+            <input type="text" id="city-input" placeholder="e.g. Chennai, Mumbai, Tokyo, Paris">
+            <button id="get-weather-btn">Get Weather</button>
+        </div>
+
+        <div id="weather-display" class="weather-box">
+            <!-- result will appear here -->
+        </div>
+
+        <div id="recent-searches">
+            <p>Recent searches:</p>
+            <ul id="history-list"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
